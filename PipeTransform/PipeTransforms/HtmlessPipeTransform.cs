@@ -1,4 +1,5 @@
-﻿using System;
+﻿using RandomSolutions.Extensions;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -16,8 +17,8 @@ namespace RandomSolutions.PipeTransforms
         public object Transform(object obj, params string[] args)
         {
             var linkFormat = args.Length > 0 ? args[0] : DefaultLinkFormat;
-            var array = obj as IEnumerable<string>;
-            return array?.Select(x => _toSimpleText(x, linkFormat))
+            var array = obj.AsEnumerable();
+            return array?.Select(x => _toSimpleText(x as string, linkFormat))
                 ?? _toSimpleText(obj as string, linkFormat)
                 as object;
         }

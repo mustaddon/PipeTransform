@@ -1,4 +1,5 @@
-﻿using System;
+﻿using RandomSolutions.Extensions;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,9 +20,7 @@ namespace RandomSolutions.PipeTransforms
             var trueValue = args.Length > 0 ? args[0] : DefaultTrueValue;
             var falseValue = args.Length > 1 ? args[1] : DefaultFalseValue;
             var nullValue = args.Length > 2 ? args[2] : DefaultNullValue;
-
-            var array = obj?.GetType() == typeof(string) ? null 
-                : (obj as System.Collections.IEnumerable)?.Cast<object>();
+            var array = obj.AsEnumerable();
 
             return array?.Select(x => _toString(x, trueValue, falseValue, nullValue)) 
                 ?? _toString(obj, trueValue, falseValue, nullValue) 

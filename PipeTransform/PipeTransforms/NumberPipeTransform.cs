@@ -1,4 +1,5 @@
-﻿using System;
+﻿using RandomSolutions.Extensions;
+using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
@@ -31,8 +32,7 @@ namespace RandomSolutions.PipeTransforms
                 string.Join("", Enumerable.Range(1, minIntegerDigits).Select(x => "0")),
                 string.Join("", Enumerable.Range(1, maxFractionDigits).Select(x => x > minFractionDigits ? "#" : "0")));
 
-            var array = obj?.GetType() == typeof(string) ? null
-                : (obj as System.Collections.IEnumerable)?.Cast<object>();
+            var array = obj.AsEnumerable();
 
             return array?.Select(x => _toString(x, format, thousandSeparator, decimalSeparator))
                 ?? _toString(obj, format, thousandSeparator, decimalSeparator)

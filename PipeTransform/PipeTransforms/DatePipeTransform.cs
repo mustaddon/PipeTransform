@@ -1,4 +1,5 @@
-﻿using System;
+﻿using RandomSolutions.Extensions;
+using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
@@ -18,7 +19,7 @@ namespace RandomSolutions.PipeTransforms
         {
             var format = args.Length > 0 ? args[0] : DefaultFormat;
             var locale = args.Length > 1 ? CultureInfo.CreateSpecificCulture(args[1]) : DefaultLocale;
-            var array = (obj as System.Collections.IEnumerable)?.Cast<object>();
+            var array = obj.AsEnumerable();
 
             return array?.Select(x => _toString(x, format, locale))
                 ?? _toString(obj, format, locale)
