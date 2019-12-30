@@ -15,8 +15,8 @@
     <Copyright>Leonid Salavatov 2019</Copyright>
     <Product>RandomSolutions.PipeTransform</Product>
     <Title>RandomSolutions.PipeTransform</Title>
-    <Description>PipeTransforms lib</Description>
-    <PackageTags></PackageTags>
+    <Description>Pipes</Description>
+    <PackageTags>pipe transform c# csharp</PackageTags>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackageLicenseUrl>https://licenses.nuget.org/MIT</PackageLicenseUrl>
     <PackageProjectUrl>https://github.com/mustaddon/PipeTransform</PackageProjectUrl>
