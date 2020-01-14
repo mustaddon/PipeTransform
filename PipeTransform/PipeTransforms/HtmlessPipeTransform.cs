@@ -61,7 +61,7 @@ namespace RandomSolutions.PipeTransforms
             // replace newlines
             result = Regex.Replace(result, @"[\r\n]+", "\r\n");
 
-            return result.Trim();
+            return System.Net.WebUtility.HtmlDecode(result.Trim());
         }
 
         static HashSet<string> _inlines = new HashSet<string>() { "a", "span", "b", "big", "i", "small", "em", "strong", "button", "label" };
