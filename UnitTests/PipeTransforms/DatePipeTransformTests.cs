@@ -1,10 +1,8 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using RandomSolutions.PipeTransforms;
 using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
-using System.Text;
 
 namespace RandomSolutions.PipeTransforms.Tests
 {
@@ -16,11 +14,14 @@ namespace RandomSolutions.PipeTransforms.Tests
         {
             var pipe = new DatePipeTransform();
 
-            var date = DateTime.Now;
+            var date = DateOnly.FromDateTime(DateTime.Now);
+            var datetime = DateTime.Now;
             var dateOffset = DateTimeOffset.Now;
+            var dtFormat = "dd.MM.yyyy HH:mm";
 
-            Assert.AreEqual(pipe.Transform(date), date.ToString(DatePipeTransform.DefaultFormat, DatePipeTransform.DefaultLocale), "default format DateTime");
-            Assert.AreEqual(pipe.Transform(dateOffset), dateOffset.ToString(DatePipeTransform.DefaultFormat, DatePipeTransform.DefaultLocale), "default format DateTimeOffset");
+            Assert.AreEqual(pipe.Transform(date), date.ToString(DatePipeTransform.DefaultFormat, DatePipeTransform.DefaultLocale), "default format DateOnly");
+            Assert.AreEqual(pipe.Transform(datetime, dtFormat), datetime.ToString(dtFormat, DatePipeTransform.DefaultLocale), "default format DateTime");
+            Assert.AreEqual(pipe.Transform(dateOffset, dtFormat), dateOffset.ToString(dtFormat, DatePipeTransform.DefaultLocale), "default format DateTimeOffset");
 
             var args = new[] { "dd MMMM yyyy HH:mm:ss", "ru" };
             Assert.AreEqual(pipe.Transform(dateOffset, args), dateOffset.ToString(args[0], CultureInfo.CreateSpecificCulture(args[1])), "custom format");

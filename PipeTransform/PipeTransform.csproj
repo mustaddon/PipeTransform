@@ -1,28 +1,28 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFrameworks>netstandard2.0;net40;net45</TargetFrameworks>
+    <TargetFrameworks>net45;netstandard2.0;net6.0;net7.0;net8.0</TargetFrameworks>
+	<LangVersion>latest</LangVersion>
     <RootNamespace>RandomSolutions</RootNamespace>
     <AssemblyName>RandomSolutions.PipeTransform</AssemblyName>
     <SignAssembly>true</SignAssembly>
     <AssemblyOriginatorKeyFile>key.snk</AssemblyOriginatorKeyFile>
-    
-    <AssemblyVersion>1.0.3</AssemblyVersion>
-    <FileVersion>1.0.3</FileVersion>
-    <Version>1.0.3</Version>
+    <AssemblyVersion>1.0.4</AssemblyVersion>
+    <FileVersion>1.0.4</FileVersion>
+    <Version>1.0.4</Version>
     <Company></Company>
     <Authors>Leonid Salavatov</Authors>
-    <Copyright>Leonid Salavatov 2020</Copyright>
+    <Copyright>Leonid Salavatov 2024</Copyright>
     <Product>RandomSolutions.PipeTransform</Product>
     <Title>RandomSolutions.PipeTransform</Title>
     <Description>Pipes</Description>
-    <PackageTags>pipe transform c# csharp</PackageTags>
+    <PackageTags>pipe transform</PackageTags>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <PackageLicenseUrl>https://licenses.nuget.org/MIT</PackageLicenseUrl>
     <PackageProjectUrl>https://github.com/mustaddon/PipeTransform</PackageProjectUrl>
     <RepositoryUrl>https://github.com/mustaddon/PipeTransform</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
     <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <NeutralLanguage />
     <PackageReleaseNotes></PackageReleaseNotes>
   </PropertyGroup>
